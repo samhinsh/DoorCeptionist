@@ -21,7 +21,7 @@ To: %s
 Subject: %s
 
 %s
-""" % (FROM, ", ".join(TO), SUBJECT, TEXT)
+""" % (FROM, ", ".join(TO), SUBJECT, BODY)
 
 # Send the email
 
