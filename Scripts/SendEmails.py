@@ -10,8 +10,8 @@ TO = ["samhinsh@stanford.edu"] # must be a list
 
 SUBJECT = "DoorCeptionist Doormail Alert"
 
-BODY = "This message was sent from your DoorCeptionist Device in Ujamaa 271." +
-       "Please see the attached message from your guest:"
+BODY = "This message was sent from your DoorCeptionist Device in Ujamaa 271." \
+	   "Please see the attached message from your guest: "
 
 # Prepare actual email
 
