@@ -1,0 +1,5 @@
+# Specific files
+Credentials.py
+
+# Wildcards
+*.pyc
