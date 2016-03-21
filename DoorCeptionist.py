@@ -10,7 +10,7 @@ from Scripts import Credentials
 from Scripts import SpeechToText
 from Scripts import SendEmail
 
-RECORD_TIME = "20"
+RECORD_TIME = "10"
 
 if __name__ == '__main__':
 
@@ -18,7 +18,7 @@ if __name__ == '__main__':
  	audioFilePath = Credentials.AUDIO_FILE_PATH
 
 	# record audio/speech file from user
-	call(["arecord", "-d", RECORD_TIME, "-f", "cd", "-t", "wav",
+	call(["arecord", "-d", RECORD_TIME, "-f", "dat", "-t", "wav",
 	      "D", "sysdefault:CARD=1", audioFilePath])
 
  	# capture its text
