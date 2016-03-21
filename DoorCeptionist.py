@@ -5,14 +5,21 @@
  # device. 
  #
 
+from subprocess import call
 from Scripts import Credentials
 from Scripts import SpeechToText
 from Scripts import SendEmail
 
+RECORD_TIME = "20"
+
 if __name__ == '__main__':
 
- 	# collect the speech file
+	# designate audio file
  	audioFilePath = Credentials.AUDIO_FILE_PATH
+
+	# record audio/speech file from user
+	call(["arecord", "-d", RECORD_TIME, "-f", "cd", "-t", "wav",
+	      "D", "sysdefault:CARD=1", audioFilePath])
 
  	# capture its text
  	text = SpeechToText.recognize(audioFilePath)
