@@ -4,7 +4,6 @@
 import requests
 
 
-
 # Return current IBM S2T transcription models
 def getModels():
 	# get HTTP response (a response code)
@@ -17,18 +16,21 @@ def getModels():
 	print response
 
 # Transcribe audio file using S2T service
-def recognize():
+def recognize(audioFilePath):
 	# S2T Recognize Endpoint
 	url = 'https://watson-api-explorer.mybluemix.net/speech-to-text/api/v1/recognize'
 
 	# HTTP Request headers
 	headers={'Content-Type': 'audio/wav'}
 
-	# collect audio file to dictate
-	audio = open('/Users/samuelhinshelwood/Downloads/foobar.wav', 'rb')
+	# open audio file
+	audioFile = open(audioFilePath, 'rb') 
 
-	# Send request, receive response from IBM server
-	response = requests.post(url, headers=headers, data=audio)
+	# Send request w/ audio file to IBM S2T server, receive response
+	response = requests.post(url, headers=headers, data=audioFile)
+
+	# close audio file
+	audioFile.close()
 
 	# Convert to JSON format
 	response = response.json()
@@ -39,10 +41,9 @@ def recognize():
 	text = text[ 'alternatives' ]
 	text = text[0]
 	text = text[ 'transcript' ]
-	print("Text returned from IBM S2T Service: " + 
-		text)
 
+	return text
 
-if __name__ == '__main__':
-	recognize()
-
+#if __name__ == '__main__':
+	# text = recognize(open('/Users/samuelhinshelwood/Downloads/foobar.wav', 'rb'))
+	# print("Text returned from IBM S2T Service: " + text)
