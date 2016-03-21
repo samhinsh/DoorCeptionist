@@ -3,3 +3,5 @@ Credentials.py
 
 # Wildcards
 *.pyc
+*.wav
+*.ogg
