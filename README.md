@@ -1,5 +1,7 @@
 DoorCeptionist
 ==========
+
+![Alt text](doormail.png?raw=true "doormail")
 DoorCeptionist is a raspberry-pi operated embedded device that allows people to be reached by their 
 residential visitors while away from home.
 
